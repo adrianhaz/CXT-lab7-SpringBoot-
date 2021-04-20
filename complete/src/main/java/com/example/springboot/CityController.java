@@ -1,8 +1,7 @@
 package com.example.springboot;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
 
 import com.example.springboot.City;
 
@@ -11,7 +10,7 @@ import java.util.ArrayList;
 @RestController
 public class CityController {
 
-	public static City[] cities {
+	public static City[] cities = {
 		new City(1, "A Coruña", "A Coruña"),
 		new City(2, "Ferrol", "A Coruña"),
 		new City(3, "Santiago de Compostela", "A Coruña"),
@@ -31,10 +30,10 @@ public class CityController {
 		return cities;
 	}
 
-	@GetMapping("/cities(id)")
-	public City city(@PathVariable("id") int cityId") {
+	@GetMapping("/cities/{id}")
+	public City city(@PathVariable("id") int cityId) {
 		int idAux = cityId - 1;
-		return cities(idAux);
+		return cities[idAux];
 	}
 
 }
