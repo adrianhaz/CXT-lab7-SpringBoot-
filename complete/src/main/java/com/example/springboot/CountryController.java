@@ -12,4 +12,10 @@ public class CountryController {
         return countries;
     }
 
+    @GetMapping("/countries/{id}")
+    public Country country(@PathVariable("id") int countryId) {
+        int idAux = countryId - 1;
+        return countries[idAux];
+    }
+    
 }
