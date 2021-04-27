@@ -7,4 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CountryController {
 
+    @GetMapping("/countries")
+    public Country[] countries() {
+        return countries;
+    }
+
 }
