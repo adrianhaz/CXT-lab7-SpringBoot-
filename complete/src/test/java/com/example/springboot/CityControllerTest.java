@@ -33,6 +33,15 @@ public class CityControllerTest {
 	}
 
 	@Test
+	public void getFerrol() throws Exception {
+		ObjectMapper obj = new ObjectMapper();
+		String jsonStr = obj.writeValueAsString(new City(2, "Ferrol", "A Coruña"));
+		mvc.perform(MockMvcRequestBuilders.get("/cities/2").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(MockMvcResultMatchers.content().json(jsonStr));
+	}
+
+	@Test
 	public void getAllCities() throws Exception {
 		ObjectMapper obj = new ObjectMapper();
 		String jsonStr = "[{\"id\":1,\"name\":\"A Coruña\",\"province\":\"A Coruña\"}," +
