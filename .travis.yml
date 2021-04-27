@@ -1,9 +1,8 @@
-sudo: false
 language: java
 jdk:
 - openjdk8
 script:
 - test/run.sh
 notifications:
-  slack:
-    secure: IYB72v6BEnrBz0hD7Zist2EQqjdOdsM/uIuPqV91erPGk/EDg+E/A66t22nDKZW+bJbgZTx5n3TBPDod8u9adXI3OH4aOuwdbzEFCi6nBc/QJfwuDR97s8/F6Yb3/2H6JXrxwbuy05bBVmnscC9viw+MI4P8rDBRutwde5Pz6mc=
+
+  webhooks: https://udcgal.webhook.office.com/webhookb2/a59cd6c1-b49b-4493-b23f-22af8a184242@cea1ea3e-60b2-4f75-a6c2-a6022e8f961b/TravisCI/34f3fef2e2b248c1b9e7d27436ba343f/344276dd-e60e-47a9-a98f-189ac622849b
