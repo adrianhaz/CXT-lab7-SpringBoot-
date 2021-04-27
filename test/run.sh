@@ -8,6 +8,6 @@ ret=$?
 if [ $ret -ne 0 ]; then
 exit $ret
 fi
-rm -rm build
+rm -r build
 
 exit
