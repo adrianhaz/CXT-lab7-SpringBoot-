@@ -25,6 +25,15 @@ public class CountryControllerTest {
     private MockMvc mvc;
 
     @Test
+    public void getPakistan() throws Exception {
+        ObjectMapper obj = new ObjectMapper();
+        String jsonStr = obj.writeValueAsString( new Country (5, "Pakistan", 220892340));
+        mvc.perform(MockMvcRequestBuilders.get("/countries/5").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.content().json(jsonStr));
+    }
+
+    @Test
     public void getAllCountries() throws Exception {
         ObjectMapper obj = new ObjectMapper();
         String jsonStr = "[{\"id\":1,\"name\":\"China\",\"population\":1439323776}," +
